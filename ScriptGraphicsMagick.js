@@ -34,6 +34,21 @@ var functions = {
                 if(err) console.log(chalk.red(err));
                 if (!err) console.log('crazytown has arrived');
             });
+    },
+
+    'stitch': function() {
+        gm()
+            .in('-page', '+0+0')
+            .in('./images/sample256/anything256_0.png')
+            .in('-page', '+0+256')
+            .in('./images/sample256/anything256_1.png')
+            .in('-page', '+0+512')
+            .in('./images/sample256/anything256_2.jpeg')
+            .mosaic()
+            .write('./images/temp/merged.png', function(err){
+                if(err) console.log(chalk.red(err));
+                if (!err) console.log('merger has completed');
+            })
     }
 }
 
